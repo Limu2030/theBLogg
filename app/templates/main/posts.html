@@ -1,37 +1,10 @@
-{% extends 'main/base.html'%}
+{% extends 'main/base.html'%} {% import 'bootstrap/wtf.html' as wtf %} {% block
+content%} {% for message in get_flashed_messages() %}
 
-{% block content%}
-
-
-{% for message in get_flashed_messages() %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  {{message}}
-{% endfor %}
-
-<div class="post-form">
-<form method="POST"action="" class="mx-4 mt-5 ">
-    {{ form.hidden_tag()}}
-<fieldset >
-    <legend> Add Your Blog Here</legend>
-    <div class="form-group col-4 ">
-        {{form.title.label(class= "form-control-label")}}
-        {{form.title(class='form-control',placeholder='pitch title')}} <br>
-    </div>
-    <div class="form-group col-4">
-        {{form.content.label(class= "form-control-label")}}
-    {{form.content(class='form-control',row='20' ,placeholder='write your post here...')}} <br>
-    </div>
-
-
-    <div class ="form-group col-4 dropdown" >
-        {{form.author.label(class= "form-control-label")}}
-        {{form.author(class='form-control',placeholder='post author')}} <br>
-    </div>
-    
-        <button>{{ form.submit(class='form-control btn-success')}}</button>
-
-    </div>
-</fieldset>
-</form>
+<div class="container">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}} {% endfor %}
+  </div>
+  <div class="col md-6">{{ wtf.quick_form(form) }}</div>
 </div>
 {% endblock%}

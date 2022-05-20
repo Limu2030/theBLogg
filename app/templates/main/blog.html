@@ -2,16 +2,21 @@
 
 {% block content %}
 
-<article class=" p-5" style="background-color:#607326">
-    {% for post in posts %}
-   
-
-    <p class="card-header text"><strong>Title: </strong>{{post.title}}</p>
-    <p class="card-header text"><strong>Author: </strong>{{post.user.username}}</p>
-    <p class="card-text row-10"><strong>Post: </strong> {{post.content }}</p>
-
-{% endfor %}
-</article>
+<div class="container">
+    <article class=" p-5" style="background-color:aquamarine" >
+        {% for post in posts %}
+       
+    
+        <div class="col-md-6" style="background-color:#fff; box-shadow:0 0.5rem 1rem rgba(0,0,0,0.2 );padding: 2rem;">
+            <p class="card-header text"><strong>Title: </strong>{{post.title}}</p>
+            <p class="card-header text"><strong>Author: </strong>{{post.user.username}}</p>
+            <p class="card-text row-10"><strong>Post: </strong> {{post.content }}</p>
+        </div>
+    
+    {% endfor %}
+    </article>
+    
+</div>
 
 
 {% endblock %}
