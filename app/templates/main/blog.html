@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<article class=" p-5" style="background-color:#607326">
+    {% for post in posts %}
+   
+
+    <p class="card-header text"><strong>Title: </strong>{{post.title}}</p>
+    <p class="card-header text"><strong>Author: </strong>{{post.user.username}}</p>
+    <p class="card-text row-10"><strong>Post: </strong> {{post.content }}</p>
+
+{% endfor %}
+</article>
+
+
+{% endblock %}
