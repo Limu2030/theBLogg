@@ -12,6 +12,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% include 'main/navbar.html'%}
+    {% block content %}{% endblock %}
+
+    {% include 'main/footer.html' %}
 </body>
 </html>
